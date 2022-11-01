@@ -2,12 +2,12 @@ import cv2
 import matplotlib.pyplot as plt
 
 
-S = 9
-B = 50
+S = 3
+B = 20
 
-for i in range(1,4):
-    img = cv2.imread(f'/Users/jayvakil/Documents/GitHub/Homography/{i}_cam{i-1}.jpg')
-    img = img[:424, :550]
+for i in range(0,3):
+    img = cv2.imread(f'/Users/jayvakil/Documents/GitHub/Image-selector/{i}.jpg')
+    #img = img[:424, :550]
     gray_img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
     binary_img = cv2.adaptiveThreshold(gray_img, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C,
                                     cv2.THRESH_BINARY_INV, 131, 15)
